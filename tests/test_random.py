@@ -1,7 +1,12 @@
+"""Test UnorderedDict randomization."""
 from unordereddict import UnorderedDict
 
 
-def test_iter():
+def test_iter() -> None:
+    """Test __iter__() method of UnorderedDict.
+
+    Make sure that each possible order of keys appears at least once.
+    """
     ud = UnorderedDict(a=1, b=2, c=3)
     s = set()
     for _ in range(100):
@@ -17,7 +22,11 @@ def test_iter():
     }
 
 
-def test_keys():
+def test_keys() -> None:
+    """Test keys() method of UnorderedDict.
+
+    Make sure that each possible order of keys appears at least once.
+    """
     ud = UnorderedDict(a=1, b=2, c=3)
     s = set()
     for _ in range(100):
@@ -33,7 +42,11 @@ def test_keys():
     }
 
 
-def test_values():
+def test_values() -> None:
+    """Test values() method of UnorderedDict.
+
+    Make sure that each possible order of values appears at least once.
+    """
     ud = UnorderedDict(a=1, b=2, c=3)
     s = set()
     for _ in range(100):
@@ -49,7 +62,11 @@ def test_values():
     }
 
 
-def test_items():
+def test_items() -> None:
+    """Test items() method of UnorderedDict.
+
+    Make sure that each possible order of items appears at least once.
+    """
     ud = UnorderedDict(a=1, b=2, c=3)
     s = set()
     for _ in range(100):
@@ -65,7 +82,11 @@ def test_items():
     }
 
 
-def test_popitem():
+def test_popitem() -> None:
+    """Test popitem() method of UnorderedDict.
+
+    Make sure that each item will be first at least once.
+    """
     s = set()
     for _ in range(100):
         ud = UnorderedDict(a=1, b=2, c=3)

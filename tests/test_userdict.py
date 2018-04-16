@@ -1,21 +1,24 @@
+"""Test basic mapping capabilities of UnorderedDict.
+
+UnorderedDict is a subclass of UserDict, so let's make sure that it fulfills all UserDict's obligations.
+"""
 from test.test_userdict import UserDictTest
 
 from unordereddict import UnorderedDict
 
 
-class TestMapping(UserDictTest):
+class TestUserDict(UserDictTest):
+    """Test class that tests UnorderedDict."""
     type2test: type = UnorderedDict
 
     def test_popitem(self) -> None:
+        """Test popitem."""
         d = self._empty_mapping()
         self.assertRaises(KeyError, d.popitem)
         self.assertRaises(TypeError, d.popitem, 42)
 
     def test_repr(self) -> None:
-        """
-
-        :return:
-        """
+        """Test UnorderedDict representation."""
         d = self._empty_mapping()
         self.assertEqual(repr(d), 'UnorderedDict({})')
         d[1] = 2
