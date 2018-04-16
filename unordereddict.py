@@ -33,8 +33,11 @@ class UnorderedDict(UserDict):
 
         :return: a generator that iterates keys of the dict in random order
         """
+        initial_length = len(self.data)
         for key in _shuffled(self.data):
             yield key
+            if len(self.data) != initial_length:
+                raise RuntimeError('dictionary changed size during iteration')
 
     def __repr__(self) -> str:
         """String representation of an instance of UnorderedDict.

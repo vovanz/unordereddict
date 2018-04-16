@@ -6,9 +6,6 @@ from unordereddict import UnorderedDict
 class TestMapping(UserDictTest):
     type2test: type = UnorderedDict
 
-    def test_mutatingiteration(self) -> None:
-        pass
-
     def test_popitem(self) -> None:
         d = self._empty_mapping()
         self.assertRaises(KeyError, d.popitem)
