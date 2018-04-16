@@ -57,7 +57,7 @@ class UnorderedDict(UserDict):
             return self.data.popitem()
         random_index = randrange(0, len(self.data))
         dict_iterator = iter(self.data)
-        for _ in range(0, random_index - 1):
+        for _ in range(0, random_index):
             next(dict_iterator)
         key = next(dict_iterator)
         return key, self.data.pop(key)
